@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>chattydata</h1>
+    <p class="lead">Really cool way to dictate notes and then manually parse out your content into data</p>
+    <p><a href="http://chattydata.com" class="btn btn-primary btn-lg">Visit our website &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Create New Data</h2>
+        <p>Create new data by naming an item and then listing its properties, name then value.</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>@Html.ActionLink("Try it out", "CreateData", "Chatty", null, new { Class = "btn btn-default" })</p>
+        }
+        else
+        {
+            <p>@Html.ActionLink("Login now", "CreateData", "Chatty", null, new { Class = "btn btn-default" })</p>
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Make an Inquiry</h2>
+        <p>Find data by describing a data condition in a field-by-field manner.</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>@Html.ActionLink("Try it out", "Query", "Chatty", null, new { Class = "btn btn-default" })</p>
+        }
+        else
+        {
+            <p>@Html.ActionLink("Login now", "Query", "Chatty", null, new { Class = "btn btn-default" })</p>
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Consolidate Duplicates</h2>
+        <p>Identify the match condition then sort order</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>@Html.ActionLink("Try it out", "MergeData", "Chatty", null, new { Class = "btn btn-default" })</p>
+        }
+        else
+        {
+            <p>@Html.ActionLink("Login now", "MergeData", "Chatty", null, new { Class = "btn btn-default" })</p>
+        }
+    </div>
+</div>

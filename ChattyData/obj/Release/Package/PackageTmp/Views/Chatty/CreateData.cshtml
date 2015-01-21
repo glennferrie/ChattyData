@@ -1,0 +1,9 @@
+﻿@model ChattyMessage
+@using ChattyData.Models
+@{
+    ViewBag.Title = "Create Data";
+}
+
+<h2>Create Data</h2>
+
+@{ Html.RenderPartial("_ChattyFormPartial", Model); }

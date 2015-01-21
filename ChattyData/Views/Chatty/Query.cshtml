@@ -1,0 +1,8 @@
+﻿@model ChattyMessage
+@using ChattyData.Models
+@{
+    ViewBag.Title = "Query";    
+}
+<h2>Query</h2>
+
+@{ Html.RenderPartial("_ChattyFormPartial", Model); }
